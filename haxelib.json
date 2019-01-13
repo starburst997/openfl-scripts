@@ -1,0 +1,11 @@
+{
+	"name": "openfl-scripts",
+	"url": "http://www.openfl.org",
+	"license": "MIT",
+	"tags": [],
+	"description": "OpenFL scripts folder",
+	"version": "8.7.0",
+	"classPath": "src/",
+	"releasenote": "",
+	"contributors": []
+}
