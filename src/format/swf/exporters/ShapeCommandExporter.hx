@@ -57,7 +57,8 @@ class ShapeCommandExporter extends DefaultShapeExporter {
 		
 	}
 	
-	override public function beginGradientFill (type:GradientType, colors:Array<UInt>, alphas:Array<Float>, ratios:Array<Int>, matrix:Matrix = null, spreadMethod:SpreadMethod = null, interpolationMethod:InterpolationMethod = null, focalPointRatio:Float = 0):Void {
+	override public function beginGradientFill (type:GradientType, colors:Array<UInt>, alphas:Array<Float>, ratios:Array<Int>, matrix:Matrix = null,
+		spreadMethod:SpreadMethod = PAD, interpolationMethod:InterpolationMethod = RGB, focalPointRatio:Float = 0):Void {
 		
 		commands.push (BeginGradientFill (type, colors, alphas, ratios, matrix, spreadMethod, interpolationMethod, focalPointRatio));
 		
@@ -75,7 +76,8 @@ class ShapeCommandExporter extends DefaultShapeExporter {
 		
 	}
 	
-	override public function lineStyle (thickness:Float = 0, color:Int = 0, alpha:Float = 1.0, pixelHinting:Bool = false, scaleMode:LineScaleMode = null, startCaps:CapsStyle = null, endCaps:CapsStyle = null, joints:JointStyle = null, miterLimit:Float = 3):Void {
+	override public function lineStyle (thickness:Null<Float> = null, color:Int = 0, alpha:Float = 1.0, pixelHinting:Bool = false, scaleMode:LineScaleMode = NORMAL,
+		startCaps:CapsStyle = null, endCaps:CapsStyle = null, joints:JointStyle = null, miterLimit:Float = 3):Void {
 		
 		commands.push (LineStyle (thickness, color, alpha, pixelHinting, scaleMode, startCaps, /*endCaps,*/ joints, miterLimit));
 		
