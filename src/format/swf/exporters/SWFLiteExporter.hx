@@ -1087,12 +1087,12 @@ class SWFLiteExporter {
 										case ONull:
 											stack.push(null);
 										case OOp(op):
-											var operator = null;
+											var oper = null;
 											switch (op) {
 												case OpMul:
-													operator = "*";
+													oper = "*";
 												case OpAdd:
-													operator = "+";
+													oper = "+";
 												case _:
 													Log.info ("", "OOp");
 											}
@@ -1102,10 +1102,10 @@ class SWFLiteExporter {
 												Log.info ("", "cast to " + stack.pop() + " is discarded");
 											}
 
-											if (operator != null)
+											if (oper != null)
 											{
 												var temp = stack.pop();
-												stack.push(Std.string(stack.pop()) + " " + operator + " " + Std.string(temp));
+												stack.push(Std.string(stack.pop()) + " " + oper + " " + Std.string(temp));
 											}
 										case OJump(j, delta):
 											switch (j) {
